@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Sorting Visualizer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./sort.css">
+    </head>
+
+    <body>
+
+        <header class="title">
+            <h1>Sorting Visualizer</h1>
+            <div class="stuff-holder">
+                <button class="new-array" id="new-array">New Array</button>
+
+                <div class="range-container">
+                    <div class="range-holder"><label>Size</label><input id="array-size" min="10" max="80" type="range"></div>
+                    <div class="range-holder"><label>Speed</label><input id="sort-speed" min="10" type="range"></div>
+                </div>
+    
+                <div class="button-holder">
+                    <button class="selection" id="bubble">Bubble Sort</button>
+                    <button class="selection" id="selection">Selection Sort</button>
+                    <button class="selection" id="insertion">Insertion Sort</button>
+                    <button class="selection" id="quick">Quick Sort</button>
+                    <button class="selection" id="merge">Merge Sort</button>
+                </div>
+    
+                <div class="min-option">
+                    <select class="selection-drop" id="dropdown">
+                        <option value="bubble" class="selection-drop-op">Bubble Sort</option>
+                        <option value="selection" class="selection-drop">Selection Sort</option>
+                        <option value="insertion" class="selection-drop">Insertion Sort</option>
+                        <option value="quick" class="selection-drop">Quick Sort</option>
+                        <option value="merge" class="selection-drop">Merge Sort</option>
+                    </select>
+
+                    <button class="new-array" id="visualize">Visualize</button>
+
+                </div>
+                
+            </div>
+
+           
+        </header>
+
+        <div class="main-window">
+            <div class="array-holder" id="array-holder">
+                <div class="array" id="array" style="height: 2px;"></div>
+            </div>
+        </div>
+        <script type="module"  src="./Javascripts/bubble.js"></script>
+        <script type="module" src="./Javascripts/selection.js"></script>
+        <script type="module" src="./Javascripts/insertion.js"></script>
+        <script type="module" src="./Javascripts/quick.js"></script>
+        <script type="module" src="./Javascripts/merge.js"></script>
+        <script type="module" src="./Javascripts/sort.js"></script>
+        
+    </body>
+
+</html>
