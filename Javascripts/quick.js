@@ -16,7 +16,9 @@ import {wait,disable,enable} from "./sort.js"
             let temp = document.getElementById(i).style.height;
             
             document.getElementById(i).style.height = document.getElementById(j).style.height
+            document.getElementById(i).innerHTML = parseInt(document.getElementById(j).style.height);
             document.getElementById(j).style.height = temp;
+            document.getElementById(j).innerHTML = parseInt(temp);
             document.getElementById(i).style.backgroundColor="orange";
 
             if(j!=i){
@@ -29,7 +31,9 @@ import {wait,disable,enable} from "./sort.js"
     i++;
     let temp = document.getElementById(i).style.height;
     document.getElementById(i).style.height = pivot+"px";
+    document.getElementById(i).innerHTML = pivot;
     document.getElementById(j).style.height = temp;
+    document.getElementById(j).innerHTML = parseInt(temp);
     document.getElementById(high).style.backgroundColor="#ccccff";
     document.getElementById(i).style.backgroundColor="#00cc00";
     

@@ -13,6 +13,7 @@ async function insertionSort(array){
             
             document.getElementById(i).style.backgroundColor="#00cc00";
             document.getElementById(j+1).style.height = document.getElementById(j).style.height;
+            document.getElementById(j+1).innerHTML = parseInt(document.getElementById(j).style.height);
             document.getElementById(j+1).style.backgroundColor="#0099ff"
             
             await wait(4)
@@ -25,6 +26,7 @@ async function insertionSort(array){
         document.getElementById(j+1).style.backgroundColor="#00cc00"
     
         document.getElementById(j+1).style.height = current+"px";
+        document.getElementById(j+1).innerHTML = current;
     }
 
    document.getElementById(array.length-1).style.backgroundColor="#00cc00"

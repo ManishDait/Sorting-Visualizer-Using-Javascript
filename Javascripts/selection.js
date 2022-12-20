@@ -20,8 +20,10 @@ async function selectionSort(array){
         }
         let temp = document.getElementById(smallest).style.height;
         document.getElementById(smallest).style.height = document.getElementById(i).style.height;
+        document.getElementById(smallest).innerHTML = parseInt(document.getElementById(i).style.height);
         
         document.getElementById(i).style.height = temp;
+        document.getElementById(i).innerHTML = parseInt(temp);
 
         document.getElementById(smallest).style.backgroundColor="#ff339962"
         document.getElementById(i).style.backgroundColor="#00cc00"

@@ -30,6 +30,7 @@ async function conqure(array, si, mid, ei){
             }
             
             document.getElementById(k).style.height = left[i];
+            document.getElementById(k).innerHTML = parseInt(left[i]);
             i++;
             k++;
         }
@@ -41,6 +42,7 @@ async function conqure(array, si, mid, ei){
                 document.getElementById(k).style.background="lightgreen";
             } 
             document.getElementById(k).style.height = right[j];
+            document.getElementById(k).innerHTML = parseInt(right[j]);
             j++;
             k++;
         }
@@ -54,6 +56,7 @@ async function conqure(array, si, mid, ei){
             document.getElementById(k).style.background="lightgreen";
         }
         document.getElementById(k).style.height = left[i];
+        document.getElementById(k).innerHTML = parseInt(left[i]);
         i++;
         k++;
     }
@@ -66,6 +69,7 @@ async function conqure(array, si, mid, ei){
             document.getElementById(k).style.background="lightgreen";
         }
         document.getElementById(k).style.height = right[j];
+        document.getElementById(k).innerHTML = parseInt(right[j]);
         j++;
         k++;
     }

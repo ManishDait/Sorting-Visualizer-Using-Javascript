@@ -12,9 +12,9 @@ async function bubbleSort(array){
                 let temp = document.getElementById(j).style.height
                 console.log(temp)
                 document.getElementById(j).style.height = document.getElementById(j+1).style.height;
-                //document.getElementById(j).innerHTML = parseInt(document.getElementById(j+1).style.height);
+                document.getElementById(j).innerHTML = parseInt(document.getElementById(j+1).style.height);
                 document.getElementById(j+1).style.height = temp;
-                //document.getElementById(j+1).innerHTML = parseInt(temp);
+                document.getElementById(j+1).innerHTML = parseInt(temp);
                 await wait(10);
             }
             document.getElementById(j).style.backgroundColor="#ff339962"

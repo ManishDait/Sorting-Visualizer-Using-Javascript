@@ -18,7 +18,12 @@ let dropdown = document.getElementById("dropdown");
 let visualize = document.getElementById("visualize");
 var w = window.innerWidth;
 let speed = speedSlider.value;
+
 console.log("///"+w)
+
+if(w>1130){
+    sizeSlider.max=100;
+}
 
 if(w<450){
     sizeSlider.max=65;
@@ -43,7 +48,7 @@ function createArray(){
     for(let i=0; i<arraySize; i++){
         let length = Math.floor((Math.random()*450)+25);
         let bar = document.createElement("div");
-        //bar.innerHTML=length;
+        bar.innerHTML=length;
         bar.id = i
         bar.className = "array";
         array.push(length);
@@ -54,7 +59,31 @@ function createArray(){
 
 
 sizeSlider.onchange = function(){
+    let size;
+    let font;
     createArray();
+    let cssArr = document.querySelectorAll('.array')
+    if(sizeSlider.value <= 14){
+        size = 5;
+        font = 2;
+    }
+    if(sizeSlider.value > 14){
+        size = 2;
+        font = 0;
+    }
+    if(sizeSlider.value > 25){
+        size = 1;
+        font = 0;
+    }
+    if(sizeSlider.value > 35){
+        size = 0.5;
+        font = 0;
+    }
+
+    cssArr.forEach(arr =>{
+        arr.style.fontSize = font+"vw"
+        arr.style.width = size+"vw";
+    });
 }
 
 newArray.onclick = function(){
