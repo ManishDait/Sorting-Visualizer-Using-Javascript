@@ -19,7 +19,7 @@ let visualize = document.getElementById("visualize");
 var w = window.innerWidth;
 let speed = speedSlider.value;
 
-console.log("///"+w)
+//console.log("///"+w)
 
 if(w>1130){
     sizeSlider.max=100;
@@ -37,13 +37,37 @@ let array = [];
 
 function createArray(){
     array = [];
+    let size;
+    let font;
+    let root = document.querySelector(':root')
+    if(sizeSlider.value <= 14){
+        size = "5vw";
+        font = "1vw";
+    }
+    if(sizeSlider.value > 14){
+        size = "2vw";
+        font = "0.5vw";
+    }
+    if(sizeSlider.value > 25){
+        size = "1vw";
+        font = "0vw";
+    }
+    if(sizeSlider.value > 35){
+        size = "0.5vw";
+        font = "0vw";
+    }
+
+    root.style.setProperty("--width",size)
+    root.style.setProperty("--font",font)
+
     var child = arrayHolder.lastElementChild;
     while(child){
         arrayHolder.removeChild(child);
         child = arrayHolder.lastElementChild;
     }
     let arraySize = sizeSlider.value;
-    console.log(arraySize)
+    //console.log(arraySize)
+    //console.log(font + " " +size)
 
     for(let i=0; i<arraySize; i++){
         let length = Math.floor((Math.random()*450)+25);
@@ -62,28 +86,26 @@ sizeSlider.onchange = function(){
     let size;
     let font;
     createArray();
-    let cssArr = document.querySelectorAll('.array')
+    let root = document.querySelector(':root')
     if(sizeSlider.value <= 14){
-        size = 5;
-        font = 2;
+        size = "5vw";
+        font = "1vw";
     }
     if(sizeSlider.value > 14){
-        size = 2;
-        font = 0;
+        size = "2vw";
+        font = "0.5vw";
     }
     if(sizeSlider.value > 25){
-        size = 1;
-        font = 0;
+        size = "1vw";
+        font = "0vw";
     }
     if(sizeSlider.value > 35){
-        size = 0.5;
-        font = 0;
+        size = "0.5vw";
+        font = "0vw";
     }
 
-    cssArr.forEach(arr =>{
-        arr.style.fontSize = font+"vw"
-        arr.style.width = size+"vw";
-    });
+    root.style.setProperty("--width",size)
+    root.style.setProperty("--font",font)
 }
 
 newArray.onclick = function(){

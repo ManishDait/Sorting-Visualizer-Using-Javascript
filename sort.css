@@ -3,6 +3,8 @@
     --green: rgb(0, 128, 0);
     --dark-background: rgb(30, 36, 46);
     --font-dark: rgb(255, 255, 255);
+    --width: 5vw;
+    --font: 1vw;
     --ffPoppins: 'Poppins', sans-serif;
 }
 
@@ -161,11 +163,11 @@ button{
 }
 
 .array{
-    width: 5vw;
+    width: var(--width);
     background-color: #ff339962;
     color: white;
     text-align: center;
-    font-size: 1.5vw;
+    font-size: var(--font);
     padding-top: 10px;
     margin: 0px 2px;
     transition:  0.1s all ease;
